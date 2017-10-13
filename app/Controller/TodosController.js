@@ -1,6 +1,7 @@
 ﻿appModule.controller("TodosController", function ($scope, myService, $location, localStorageService, $http) {
     $scope.todos = {}
 
+     // Load Todo
     $scope.init = function () {
         $scope.userid = $location.absUrl().split('?userid=')[1];
        
@@ -25,6 +26,7 @@
         }
     };
 
+     // Insert new Todo
     $scope.AddTodo = function () {
         var TodoCount = localStorageService.get("TodoCount");
         var todoId = "Todo" + $scope.userid;
@@ -43,6 +45,7 @@
         localStorageService.set("TodoCount", parseInt(TodoCount) + 1);
     }
 
+    // Delete Todo
     $scope.delete = function (index) {
         if (Confirm("Are you sure want to delete this Todo?"))
         {
@@ -52,6 +55,7 @@
         }
     };
 
+     // Change state of the Todo
     $scope.edit = function (index) {
         var todoId = "Todo" + $scope.userid;
         var data = $scope.todos;
@@ -61,6 +65,7 @@
         localStorageService.set(todoId, $scope.todos);
     };
    
+     // Return to User Page
     $scope.HomeClick = function () {
         $location.url("/");
     }
