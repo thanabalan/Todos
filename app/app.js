@@ -1,5 +1,7 @@
 var appModule = angular.module("myApp", ["ngRoute", "LocalStorageModule"]);
-
+appModule.run(['$route', function($route)  {
+  $route.reload();
+}]);
 appModule.config(function ($routeProvider) {
     $routeProvider
     .when("/", {
