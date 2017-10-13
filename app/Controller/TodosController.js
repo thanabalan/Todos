@@ -47,11 +47,11 @@
 
     // Delete Todo
     $scope.delete = function (index) {
-         if ($window.confirm("Are you sure want to delete this Todo?")) {
-        {
+        if ($window.confirm("Are you sure want to delete this Todo?")) {
             var todoId = "Todo" + $scope.userid;
             $scope.todos.splice(index, 1);
             localStorageService.set(todoId, $scope.todos);
+            alert("Deleted");
         }
     };
 
