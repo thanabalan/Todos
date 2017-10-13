@@ -46,6 +46,8 @@
             $scope.todos = data.concat(d.data);
             localStorageService.set(todoId, $scope.todos);
         });
+        alert("Todo added Successfully.");
+        $scope.todoTxt = "";
         localStorageService.set("TodoCount", parseInt(TodoCount) + 1);
     }
 
