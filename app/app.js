@@ -5,7 +5,7 @@ appModule.run(['$route', function($route)  {
 appModule.config(function ($routeProvider) {
     $routeProvider
     .when("/", {
-        template: "https://thanabalan.github.io/Todos/Users.html" ,
+        templateUrl: "https://thanabalan.github.io/Todos/Users.html" ,
     })
     .when("/Todos", {
         templateUrl: "https://thanabalan.github.io/Todos/Todos.html",
