@@ -1,4 +1,4 @@
-﻿appModule.controller("TodosController", function ($scope, myService, $location, localStorageService, $http) {
+﻿appModule.controller("TodosController", function ($scope, myService, $location, localStorageService, $http, $window) {
     $scope.todos = {}
 
      // Load Todo
@@ -47,7 +47,7 @@
 
     // Delete Todo
     $scope.delete = function (index) {
-        if (Confirm("Are you sure want to delete this Todo?"))
+         if ($window.confirm("Are you sure want to delete this Todo?")) {
         {
             var todoId = "Todo" + $scope.userid;
             $scope.todos.splice(index, 1);
