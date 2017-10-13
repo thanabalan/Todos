@@ -1,0 +1,45 @@
+﻿
+
+
+<div class="content" ng-controller="TodosController" data-ng-init="init()">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <h3 class="page-header">Todos</h3>
+            <div style="border:1px solid; height:300px; overflow:scroll;">
+                <div style="margin:15px 5px; " class="row" ng-repeat="Todo in todos">
+                    <div class="col-sm-9">
+                        <p ng-class="{ 'strikethrough ': !Todo.completed }" style="font-weight:Bold;">{{ Todo.title }}</p>
+                        <button class="btn-primary" ng-click="delete($index)">Delete</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="checkbox checkbox-success">
+                            <input id="chkCompleted" ng-checked="Todo.completed" ng-click="edit($index)" type="checkbox">
+                            <label for="chkCompleted">
+                                Completed
+                            </label>
+                        </div>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <h3 class="modal-header">Add New todo</h3>
+            <textarea rows="4" cols="50" ng-model="todoTxt"></textarea>
+            <input type="button" value="Add Todo" class="btn-primary" ng-click="AddTodo()" />
+        </div>
+    </div>
+    <div class="row" style="padding:15px;">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 text-right">
+            <button class="btn-primary" ng-click="HomeClick()">Return to Users</button>
+        </div>
+        </div>
+</div>
+

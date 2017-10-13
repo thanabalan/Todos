@@ -1,0 +1,40 @@
+﻿
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Angular JS Sample</title>
+    <link href="../Content/bootstrap.css" rel="stylesheet"/>
+    <style>
+        .strikethrough {
+            text-decoration: line-through;
+        }
+        body {
+            background: #ebebeb;
+        }
+        .container {
+            background: #fff;
+        }
+    </style>
+   
+</head>
+<body>
+    <div id="content-wrapper" class="container col-sm-12">
+        <div ng-view></div>
+    </div>
+
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-cookies.min.js"></script>
+    <script src="Scripts/angular-local-storage.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <!-- Angualar files-->
+
+    <script src="app/app.js"></script>
+    <script src="app/Controller/UserController.js"></script>
+    <script src="app/Controller/TodosController.js"></script> 
+    <script src="app/Services/services.js"></script>
+</body>
+</html>
