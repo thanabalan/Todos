@@ -28,6 +28,10 @@
 
      // Insert new Todo
     $scope.AddTodo = function () {
+        if ($scope.todoTxt == "" || $scope.todoTxt == undefined) {
+            alert("Enter the Todo Text");
+            return;
+        }
         var TodoCount = localStorageService.get("TodoCount");
         var todoId = "Todo" + $scope.userid;
         var Todo = {
@@ -55,7 +59,7 @@
         }
     };
 
-     // Change state of the Todo
+     // Change status of the Todo
     $scope.edit = function (index) {
         var todoId = "Todo" + $scope.userid;
         var data = $scope.todos;
