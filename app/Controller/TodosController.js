@@ -44,9 +44,12 @@
     }
 
     $scope.delete = function (index) {
-        var todoId = "Todo" + $scope.userid;
-        $scope.todos.splice(index, 1);
-        localStorageService.set(todoId, $scope.todos);
+        if (Confirm("Are you sure want to delete this Todo?"))
+        {
+            var todoId = "Todo" + $scope.userid;
+            $scope.todos.splice(index, 1);
+            localStorageService.set(todoId, $scope.todos);
+        }
     };
 
     $scope.edit = function (index) {
