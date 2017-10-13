@@ -3,10 +3,10 @@ var appModule = angular.module("myApp", ["ngRoute", "LocalStorageModule"]);
 appModule.config(function ($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl: "../Users.html"
+        templateUrl: "https://thanabalan.github.io/Todos/Users.html"
     })
     .when("/Todos", {
-        templateUrl: "/Todos.html",
+        templateUrl: "https://thanabalan.github.io/Todos/Todos.html",
     })
    
 });
